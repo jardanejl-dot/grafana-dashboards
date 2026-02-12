@@ -39,7 +39,7 @@ Monitors:
 
 Preview:
 
-![Zimbra SSH](.github/workflows/Dashboard Monitoramento de servidor de e-mail.png)
+![Zimbra SSH](images/zimbra-ssh-monitoring.png)
 
 ---
 
