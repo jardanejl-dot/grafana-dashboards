@@ -1,4 +1,4 @@
-# Grafana-Monitoring-Dashboards
+# grafana-zabbix-monitoring-dashboards
 
 Painel para monitoramento de Acesso de Servidor Zimbra via SSH: Login, logout e access failure 
 # 📊 Grafana Monitoring Dashboards
