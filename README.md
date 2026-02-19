@@ -72,15 +72,19 @@ These dashboards focus on:
 # 📊 Dashboards Overview
 
 1️⃣ Dashboard de Acesso rápido 
-
-- Facilita vizualização favoritos e acesso recentes.
-  
+ 
 📁 File: `01-acesso-rapido.json`
 
+- Facilita vizualização favoritos e acesso recentes.
+- 
+### 🖼 Preview
 
-2️⃣ Dashboard Network Latency Monitoring (NOC)
+![Acesso Rápido](images/acesso-rapido-preview.png)
+
+##2️⃣ Dashboard Network Latency Monitoring (NOC)
 
 📁 File: `02-monitoramento-latencia-NOC.json`
+
 
 
 ### 🔎 Features
