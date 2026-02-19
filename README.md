@@ -157,7 +157,7 @@ These dashboards focus on:
 
 ---
 
-## 🔴 Zabbix Data Source Configuration (Required for Dashboards 1 & 2)
+## 🔴 Zabbix Data Source Configuration (Required for Dashboards 2 & 3)
 
 ### Step 1 – Install Zabbix Plugin
 
