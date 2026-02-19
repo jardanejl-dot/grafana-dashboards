@@ -115,7 +115,7 @@ These dashboards focus on:
 ### 🖼 Preview
 
 
-![FortiGate Dashboard](images/fortigate-preview HA1 e HA2.png)
+![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
 ---
 
 ## 3️⃣ Zimbra SSH Security Monitoring
