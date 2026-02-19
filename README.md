@@ -45,9 +45,27 @@ These dashboards focus on:
 
 ---
 
-# 📂 Repository Structure
+## 📂 Repository Structure
 
----
+```
+.
+├── dashboards/
+│   ├── 01-acesso-rapido.json
+│   ├── 02-latencia-monitoring-noc.json
+│   ├── 03-fortigate-recursos.json
+│   ├── 04-fortigate-ha1-ha2.json
+│   └── 05-zimbra-ssh-monitoring.json
+│
+├── images/
+│   ├── acesso-rapido-preview.png
+│   ├── latencia-monitoring-noc-preview.png
+│   ├── fortigate-preview.png
+│   ├── fortigate-ha1-ha2-preview.png
+│   └── zimbra-ssh-monitoring-preview.png
+│
+└── README.md
+```
+
 
 # 📊 Dashboards Overview
 
