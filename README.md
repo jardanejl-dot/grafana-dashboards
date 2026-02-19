@@ -103,7 +103,7 @@ These dashboards focus on:
 ![Latency Dashboard](images/latencia-preview-monitoring-NOC.png)
 
 
-### 3️⃣ FortiGate Monitoring Dashboard
+### 3️⃣ & 4️⃣ FortiGate Monitoring Dashboard
 
 📁 File: `03-monitoramento-fortigate-IPS.json` 
        `04-monitoramento-fortigate-ha1-ha2..json`
@@ -130,7 +130,7 @@ These dashboards focus on:
 ![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
 
 
-### 4️⃣ Dashboard Zimbra SSH Security Monitoring
+### 5️⃣ Dashboard Zimbra SSH Security Monitoring
 
 📁 File: `05-monitoramento-zimbra-ssh.json`
 
