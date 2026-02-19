@@ -13,6 +13,7 @@ Enterprise Observability Dashboards for Network, Security and Infrastructure Mon
 
 Este repositório contém dashboards corporativos desenvolvidos para **monitoramento de infraestrutura**, com foco em:
 
+- Acesso Rápido
 - Monitoramento de Latência (NOC)
 - Monitoramento de Firewall FortiGate
 - Monitoramento de Servidor de E-mail Zimbra (SSH Security)
@@ -31,6 +32,7 @@ Os dashboards foram projetados com foco em:
 
 This repository contains enterprise-level Grafana dashboards designed for:
 
+- Quick Access
 - Network Latency Monitoring
 - FortiGate Firewall Monitoring
 - Zimbra Mail Server SSH Security Monitoring
