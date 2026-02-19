@@ -79,7 +79,7 @@ These dashboards focus on:
 📁 File: `01-acesso-rapido.json`
 
 
-## 2️⃣ Network Latency Monitoring (NOC)
+## 2️⃣ Dashboard Network Latency Monitoring (NOC)
 
 📁 File: `02-monitoramento-latencia-NOC.json`
 
@@ -101,7 +101,7 @@ These dashboards focus on:
 
 ---
 
-## 3️⃣ FortiGate Monitoring
+## 3️⃣ Dashboard FortiGate Monitoring
 
 📁 File: `03-monitoramento-fortigate-IPS.json` 
        `04-monitoramento-fortigate-ha1-ha2..json`
@@ -129,7 +129,7 @@ These dashboards focus on:
 
 ---
 
-## 4️⃣ Zimbra SSH Security Monitoring
+## 4️⃣ Dashboard Zimbra SSH Security Monitoring
 
 📁 File: `05-monitoramento-zimbra-ssh.json`
 
