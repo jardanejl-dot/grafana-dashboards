@@ -75,12 +75,12 @@ These dashboards focus on:
 ## 1️⃣ Dashboard de Acesso rápido 
 
 - Facilita vizualização favoritos e acesso recentes.
-📁 File: `01-monitoramento-latencia.json`
+📁 File: `01-acesso-rapido.json`
 
 
 ## 2️⃣ Network Latency Monitoring (NOC)
 
-📁 File: `01-monitoramento-latencia.json`
+📁 File: `02-monitoramento-latencia-NOC.json`
 
 
 ### 🔎 Features
@@ -102,7 +102,8 @@ These dashboards focus on:
 
 ## 3️⃣ FortiGate Monitoring
 
-📁 File: `02-monitoramento-fortigate.json`
+📁 File: `03-monitoramento-fortigate-IPS.json` 
+       `04-monitoramento-fortigate-ha1-ha2..json`
 
 ### 🔎 Features
 
@@ -123,13 +124,13 @@ These dashboards focus on:
 ### 🖼 Preview
 
 ![FortiGate Dashboard IPS](images/fortigate-preview.png)
-
 ![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
+
 ---
 
 ## 4️⃣ Zimbra SSH Security Monitoring
 
-📁 File: `03-monitoramento-zimbra.json`
+📁 File: `05-monitoramento-zimbra-ssh.json`
 
 ### 🔎 Features
 
