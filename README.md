@@ -101,7 +101,7 @@ These dashboards focus on:
 
 ---
 
-## 3️⃣ Dashboard FortiGate Monitoring
+## 3️⃣ FortiGate Monitoring Dashboard
 
 📁 File: `03-monitoramento-fortigate-IPS.json` 
        `04-monitoramento-fortigate-ha1-ha2..json`
@@ -157,7 +157,7 @@ These dashboards focus on:
 
 ---
 
-## 🔴 Zabbix Data Source Configuration (Required for Dashboards 2 & 3)
+## 🔴 Zabbix Data Source Configuration (Required for Dashboards 2,3 & 4)
 
 ### Step 1 – Install Zabbix Plugin
 
@@ -180,7 +180,7 @@ These dashboards focus on:
 
 ---
 
-## 🔵 MySQL Data Source Configuration (Required for Dashboard 3)
+## 🔵 MySQL Data Source Configuration (Required for Dashboard 5)
 
 ### Step 1 – Add MySQL Data Source
 
