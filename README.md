@@ -81,10 +81,10 @@ These dashboards focus on:
 
 ![Acesso Rápido](images/acesso-rapido-preview.png)
 
+
 ### 2️⃣ Latency Monitoring Dashboard (NOC)
 
 📁 File: `02-monitoramento-latencia-NOC.json`
-
 
 
 ### 🔎 Features
@@ -129,7 +129,6 @@ These dashboards focus on:
 ![FortiGate Dashboard IPS](images/fortigate-preview.png)
 ![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
 
----
 
 ### 4️⃣ Dashboard Zimbra SSH Security Monitoring
 
@@ -157,7 +156,6 @@ These dashboards focus on:
 
 # ⚙️ Installation & Configuration
 
----
 
 ## 🔴 Zabbix Data Source Configuration (Required for Dashboards 2,3 & 4)
 
