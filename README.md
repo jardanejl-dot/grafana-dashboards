@@ -75,6 +75,7 @@ These dashboards focus on:
 ## 1️⃣ Dashboard de Acesso rápido 
 
 - Facilita vizualização favoritos e acesso recentes.
+  
 📁 File: `01-acesso-rapido.json`
 
 
