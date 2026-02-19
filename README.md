@@ -11,7 +11,7 @@ Enterprise Observability Dashboards for Network, Security and Infrastructure Mon
 
 ## 🇧🇷 Sobre o Projeto
 
-Este repositório contém dashboards corporativos desenvolvidos para **monitoramento avançado de infraestrutura**, com foco em:
+Este repositório contém dashboards corporativos desenvolvidos para **monitoramento de infraestrutura**, com foco em:
 
 - Monitoramento de Latência (NOC)
 - Monitoramento de Firewall FortiGate
@@ -88,7 +88,7 @@ These dashboards focus on:
 
 ### 🖼 Preview
 
-![Latency Dashboard](images/latencia-preview.png)
+![Latency Dashboard](images/latencia-preview-monitoring-NOC.png)
 
 ---
 
@@ -138,7 +138,7 @@ These dashboards focus on:
 
 ### 🖼 Preview
 
-![Zimbra Dashboard](images/zimbra-preview.png)
+![Zimbra Dashboard](images/preview-zimbra-ssh-monitoring.png)
 
 ---
 
