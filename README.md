@@ -102,7 +102,6 @@ These dashboards focus on:
 
 ![Latency Dashboard](images/latencia-preview-monitoring-NOC.png)
 
----
 
 ### 3️⃣ FortiGate Monitoring Dashboard
 
