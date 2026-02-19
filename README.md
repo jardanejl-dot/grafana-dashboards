@@ -1,8 +1,8 @@
 # 📊 Grafana Monitoring Dashboards
 Enterprise Observability Dashboards for Network, Security and Infrastructure Monitoring
 
-![Grafana](https://img.shields.io/badge/Grafana-10.x-orange)
-![Zabbix](https://img.shields.io/badge/Zabbix-6.x-red)
+![Grafana](https://img.shields.io/badge/Grafana-12.x-orange)
+![Zabbix](https://img.shields.io/badge/Zabbix-7.x-red)
 ![MySQL](https://img.shields.io/badge/MySQL-8.x-blue)
 ![Status](https://img.shields.io/badge/Project-Production_Ready-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
