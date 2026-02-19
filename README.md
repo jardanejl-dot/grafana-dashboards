@@ -106,14 +106,15 @@ These dashboards focus on:
   - LAG SW CORE
   - WAN Primary
   - WAN Redundant
-  - VLAN SITEBRA
-  - VLAN NBS
+  - VLAN GENERIC
+  - VLAN GENERIC
   - HA1 / HA2
 - FortiGate Uptime
 - IPS Information
 
 ### 🖼 Preview
 
+![FortiGate Dashboard IPS](images/fortigate-preview.png)
 
 ![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
 ---
