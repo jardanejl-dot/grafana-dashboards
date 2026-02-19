@@ -81,7 +81,7 @@ These dashboards focus on:
 
 ![Acesso Rápido](images/acesso-rapido-preview.png)
 
-### 2️⃣ Dashboard Network Latency Monitoring (NOC)
+### 2️⃣ Latency Monitoring Dashboard (NOC)
 
 📁 File: `02-monitoramento-latencia-NOC.json`
 
@@ -168,7 +168,6 @@ These dashboards focus on:
 2. Search for: Zabbix
 3. Install: alexanderzobnin-zabbix-app
 
----
 
 ### Step 2 – Add Zabbix Data Source
 
