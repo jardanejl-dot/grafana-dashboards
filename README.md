@@ -1,10 +1,218 @@
 # 📊 Grafana Monitoring Dashboards
+Enterprise Observability Dashboards for Network, Security and Infrastructure Monitoring
 
-Repositório contendo dashboards profissionais para monitoramento de infraestrutura utilizando **Grafana + Zabbix + MySQL**.
-
-Os dashboards contemplam monitoramento de latência, firewall FortiGate e servidor de e-mail Zimbra.
+![Grafana](https://img.shields.io/badge/Grafana-12.x-orange)
+![Zabbix](https://img.shields.io/badge/Zabbix-6.x-red)
+![MySQL](https://img.shields.io/badge/MySQL-8.x-blue)
+![Status](https://img.shields.io/badge/Project-Production_Ready-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
-# 📁 Estrutura do Repositório
+## 🇧🇷 Sobre o Projeto
+
+Este repositório contém dashboards corporativos desenvolvidos para **monitoramento avançado de infraestrutura**, com foco em:
+
+- Monitoramento de Latência (NOC)
+- Monitoramento de Firewall FortiGate
+- Monitoramento de Servidor de E-mail Zimbra (SSH Security)
+
+Os dashboards foram projetados com foco em:
+
+- Observabilidade
+- Segurança
+- Performance de rede
+- Visão operacional para NOC
+- Monitoramento em tempo real
+
+---
+
+## 🇺🇸 About the Project
+
+This repository contains enterprise-level Grafana dashboards designed for:
+
+- Network Latency Monitoring
+- FortiGate Firewall Monitoring
+- Zimbra Mail Server SSH Security Monitoring
+
+These dashboards focus on:
+
+- Infrastructure observability
+- Network performance
+- Security monitoring
+- NOC visibility
+- Real-time analysis
+
+---
+
+# 📂 Repository Structure
+
+---
+
+# 📊 Dashboards Overview
+
+---
+
+## 1️⃣ Network Latency Monitoring (NOC)
+
+📁 File: `01-monitoramento-latencia.json`
+
+### 🔎 Features
+
+- ICMP Ping Monitoring
+- ICMP Packet Loss
+- ICMP Response Time
+- Redundant Fiber Link Monitoring
+- Google DNS Monitoring
+- FortiGate Interface Traffic (LAG, WAN Primary, WAN Backup)
+- Internet Link Throughput
+- Network Asset Status Overview (Host, Status, Problem, Age, Time)
+
+### 🖼 Preview
+
+![Latency Dashboard](images/latencia-preview.png)
+
+---
+
+## 2️⃣ FortiGate Monitoring
+
+📁 File: `02-monitoramento-fortigate.json`
+
+### 🔎 Features
+
+- Disk Capacity Monitoring
+- Disk Usage Rate
+- CPU Utilization
+- Memory Usage
+- Interface Traffic Monitoring:
+  - LAG SW CORE
+  - WAN Primary
+  - WAN Redundant
+  - VLAN SITEBRA
+  - VLAN NBS
+  - HA1 / HA2
+- FortiGate Uptime
+- IPS Information
+
+### 🖼 Preview
+
+![FortiGate Dashboard](images/fortigate-preview.png)
+
+---
+
+## 3️⃣ Zimbra SSH Security Monitoring
+
+📁 File: `03-monitoramento-zimbra.json`
+
+### 🔎 Features
+
+- SSH Login Statistics (24h)
+- SSH Logout Statistics (24h)
+- Authentication Failures (24h)
+- Detailed Log Monitoring:
+  - Severity
+  - Host
+  - Item
+  - Full SSH Log
+  - Access IP
+  - Timestamp
+  - User
+
+### 🖼 Preview
+
+![Zimbra Dashboard](images/zimbra-preview.png)
+
+---
+
+# ⚙️ Installation & Configuration
+
+---
+
+## 🔴 Zabbix Data Source Configuration (Required for Dashboards 1 & 2)
+
+### Step 1 – Install Zabbix Plugin
+
+1. Go to: Configuration → Plugins
+2. Search for: Zabbix
+3. Install: alexanderzobnin-zabbix-app
+
+---
+
+### Step 2 – Add Zabbix Data Source
+
+1. Go to: Connections → Data Sources
+2. Click: Add data source
+3. Select: Zabbix
+4. Configure:
+- Zabbix API URL
+- Username
+- Password
+5. Click: Save & Test
+
+---
+
+## 🔵 MySQL Data Source Configuration (Required for Dashboard 3)
+
+### Step 1 – Add MySQL Data Source
+
+1. Go to: Connections → Data Sources
+2. Click: Add data source
+3. Select: 
+---
+
+### Step 2 – Configure Database Access
+
+Configure:
+
+- Host
+- Port (default 3306)
+- Database: `zabbix`
+- User
+- Password
+
+---
+
+### Step 3 – Save & Test
+
+Ensure status: Database Connection OK
+
+---
+
+# 📥 Importing Dashboards
+
+1. Go to: Dashboards → Import
+2. Upload the corresponding `.json` file
+3. Select the correct data source
+4. Click:Import
+
+---
+
+# 🔐 Security Notice
+
+All dashboards were exported using Grafana external export mode to ensure:
+
+- No production IP exposure
+- No sensitive hostnames
+- No credential leakage
+- No environment-specific identifiers
+
+---
+
+# 🚀 Project Goals
+
+- Provide reusable enterprise monitoring dashboards
+- Deliver production-ready observability solutions
+- Support NOC operations
+- Improve infrastructure visibility
+
+---
+
+# 📄 License
+
+MIT License
+
+ 
+---
+
+
 
