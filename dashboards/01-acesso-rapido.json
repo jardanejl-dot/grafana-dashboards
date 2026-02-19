@@ -1,0 +1,115 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "ZABBIX_DS_UID"
+      },
+      "description": "Acesso rapido",
+      "gridPos": { "h": 13, "w": 9, "x": 0, "y": 0 },
+      "id": 1,
+      "options": {
+        "folderUID": "",
+        "includeVars": true,
+        "keepTime": true,
+        "maxItems": 30,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": false,
+        "showStarred": true,
+        "tags": [
+          "monitoring",
+          "fortigate",
+          "icmp",
+          "firewall",
+          "interface",
+          "network"
+        ]
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "ZABBIX_DS_UID"
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12
+        }
+      ],
+      "title": "Acesso Redes - Favoritos",
+      "transparent": true,
+      "type": "dashlist"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "ZABBIX_DS_UID"
+      },
+      "description": "Acesso rapido",
+      "gridPos": { "h": 24, "w": 15, "x": 9, "y": 0 },
+      "id": 2,
+      "options": {
+        "folderUID": "FOLDER_UID",
+        "includeVars": true,
+        "keepTime": true,
+        "maxItems": 30,
+        "query": "",
+        "showHeadings": true,
+        "showRecentlyViewed": true,
+        "showSearch": false,
+        "showStarred": false,
+        "tags": []
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "ZABBIX_DS_UID"
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12
+        }
+      ],
+      "transparent": true,
+      "type": "dashlist"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["monitoring"],
+  "templating": { "list": [] },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": { "hidden": false },
+  "timezone": "browser",
+  "title": "Acesso rápido - Redes",
+  "uid": null,
+  "version": 1,
+  "weekStart": ""
+}
