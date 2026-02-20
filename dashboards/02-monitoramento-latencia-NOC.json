@@ -1,0 +1,4973 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Monitoramento-Zabbix",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 62,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "datasource": {},
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "ICMP Monitoring",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-orange",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showPercentChange": false,
+        "text": {
+          "titleSize": 21,
+          "valueSize": 21
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "description": "Coleta de dados de ICMP.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "max": -1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 0,
+        "y": 1
+      },
+      "id": 31,
+      "options": {
+        "displayMode": "lcd",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "text": {},
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP ping"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "host": {
+            "filter": "Roteador ISP_A - <IP_PUBLICO_1>"
+          },
+          "item": {
+            "filter": "Device OS: ICMP ping"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP loss"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Roteador ISP_A - <IP_PUBLICO_1>"
+          },
+          "item": {
+            "filter": "Device OS: ICMP loss"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP response time"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Roteador ISP_A - <IP_PUBLICO_1>"
+          },
+          "item": {
+            "filter": "Huawei VRP: ICMP response time"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "Roteador \"link\" - IP",
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "description": "Coleta de dados de ICMP",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 8,
+        "y": 1
+      },
+      "id": 28,
+      "options": {
+        "displayMode": "lcd",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "text": {},
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP ping"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "host": {
+            "filter": "Roteador ISP_B - <IP_PUBLICO_2>"
+          },
+          "item": {
+            "filter": "Device OS: ICMP ping"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP loss"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Roteador ISP_B - <IP_PUBLICO_2>"
+          },
+          "item": {
+            "filter": "Cisco IOS: ICMP loss"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP response time"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Roteador ISP_B - <IP_PUBLICO_2>"
+          },
+          "item": {
+            "filter": "Cisco IOS: ICMP response time"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "$ROUTER_WAN",
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "description": "Coleta de dados de ICMP.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 1
+      },
+      "id": 32,
+      "options": {
+        "displayMode": "lcd",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "text": {},
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP ping"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "host": {
+            "filter": "DNS Externo - <IP_TESTE>"
+          },
+          "item": {
+            "filter": "ICMP: ICMP ping"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP loss"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "DNS Externo - <IP_TESTE>"
+          },
+          "item": {
+            "filter": "ICMP loss"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "ICMP response time"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Grupo_Rede"
+          },
+          "hide": false,
+          "host": {
+            "filter": "DNS Externo - <IP_TESTE>"
+          },
+          "item": {
+            "filter": "ICMP: ICMP response time"
+          },
+          "itemTag": {
+            "filter": "component: network"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "DNS Externo - <IP_TESTE>",
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "Firewall FortiGate - IP - Network Traffic",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showPercentChange": false,
+        "text": {
+          "titleSize": 21,
+          "valueSize": 21
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 5
+      },
+      "id": 6,
+      "interval": "3m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "none",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits received"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Bits received"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits sent"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Bits sent"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Outbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Inbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Outbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Inbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated downstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Estimated downstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated upstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface LAG_SW_CORE(): Estimated upstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface LAG_SW_CORE()"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "LAG SW CORE ",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 5
+      },
+      "id": 5,
+      "interval": "3m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "timezone": [
+          "America/Rio_Branco"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits received"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Bits received"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits sent"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Bits sent"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Outbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Inbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Outbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Inbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated downstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Estimated downstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated upstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Estimated upstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "VLAN <ID> - Bandwidth Monitor",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 5
+      },
+      "id": 7,
+      "interval": "3m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits received"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Bits received"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits sent"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Bits sent"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Outbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Inbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Outbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Inbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated downstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Estimated downstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Estimated upstream bandwidth"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Interface VLAN_<ID>(<VLAN_NAME>): Estimated upstream bandwidth"
+          },
+          "itemTag": {
+            "filter": "Application: Interface VLAN_<ID>(<VLAN_NAME>)"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+     "title": "$VLAN_NAME",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "Firewall FortiGate - IP - Resources",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 21,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showPercentChange": false,
+        "text": {
+          "titleSize": 21,
+          "valueSize": 21
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {},
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "Switch Link Internet - IP",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-yellow",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 12,
+        "x": 12,
+        "y": 10
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showPercentChange": false,
+        "text": {
+          "titleSize": 21,
+          "valueSize": 21
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd",
+            "seriesBy": "min"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 6,
+            "gradientMode": "scheme",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 30
+              },
+              {
+                "color": "#EAB839",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 60
+              },
+              {
+                "color": "dark-red",
+                "value": 70
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 11
+      },
+      "id": 26,
+      "interval": "1m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "timezone": [
+          "America/Rio_Branco"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "Memory usage"
+          },
+          "itemTag": {
+            "filter": "Application: Memory"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "Memory usage",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {},
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "light-green",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 59
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 75
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 2,
+        "x": 8,
+        "y": 11
+      },
+      "id": 24,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "CPU usage"
+          },
+          "itemTag": {
+            "filter": "Application: CPU"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "CPU usage",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "instance"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true,
+              "Time 3": true,
+              "Time 4": true,
+              "Time 5": true,
+              "Time 6": true,
+              "Time 7": true,
+              "Time 8": true,
+              "Value": false,
+              "Value #A": false,
+              "Value #B": false,
+              "Value #F": true,
+              "__name__": true,
+              "__name__ 1": true,
+              "__name__ 2": true,
+              "__name__ 3": true,
+              "__name__ 4": true,
+              "__name__ 5": true,
+              "__name__ 6": true,
+              "__name__ 7": true,
+              "job": true,
+              "job 1": true,
+              "job 2": true,
+              "job 3": true,
+              "job 4": true,
+              "job 5": true,
+              "job 6": true,
+              "job 7": true,
+              "job 8": true,
+              "phase": true,
+              "type": true,
+              "type 1": true,
+              "type 2": true,
+              "type 3": true,
+              "type 4": true,
+              "type 5": true,
+              "type 6": true,
+              "type 7": true,
+              "type 8": true,
+              "version": false
+            },
+            "indexByName": {
+              "Time 1": 9,
+              "Time 2": 13,
+              "Time 3": 17,
+              "Time 4": 20,
+              "Time 5": 24,
+              "Time 6": 28,
+              "Time 7": 32,
+              "Value #A": 1,
+              "Value #B": 3,
+              "Value #C": 5,
+              "Value #D": 2,
+              "Value #E": 6,
+              "Value #F": 8,
+              "Value #G": 7,
+              "__name__ 1": 10,
+              "__name__ 2": 14,
+              "__name__ 3": 21,
+              "__name__ 4": 25,
+              "__name__ 5": 29,
+              "instance": 0,
+              "job 1": 11,
+              "job 2": 15,
+              "job 3": 18,
+              "job 4": 22,
+              "job 5": 26,
+              "job 6": 30,
+              "type 1": 12,
+              "type 2": 16,
+              "type 3": 19,
+              "type 4": 23,
+              "type 5": 27,
+              "type 6": 31,
+              "version": 4
+            },
+            "renameByName": {
+              "Value": "Up",
+              "Value #A": "Status",
+              "Value #B": "SSL",
+              "Value #C": "SSL Cert Expiry (days)",
+              "Value #D": "Code",
+              "Value #E": "Probe Duration (s)",
+              "Value #F": "",
+              "Value #G": "DNS Lookup Duration (s)",
+              "Value #H": "Probe IP",
+              "instance": "Instance",
+              "type 6": "",
+              "version": "TLS Version"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Code"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "TLS Version"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": false,
+                "field": "SSL Cert Expiry (days)"
+              }
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {},
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "red",
+            "mode": "shades"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dateTimeAsLocalNoDateIfToday"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 2,
+        "x": 10,
+        "y": 11
+      },
+      "id": 23,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^FortiGate Uptime$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.2",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Edge Firewall - <LAN_GATEWAY>"
+          },
+          "item": {
+            "filter": "FortiGate Uptime"
+          },
+          "itemTag": {
+            "filter": "Application: Status"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "FortiGate Uptime",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "description": "Switch Link Internet - IP",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": true,
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 11
+      },
+      "id": 18,
+      "interval": "3m",
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "min",
+            "max"
+          ],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false,
+          "sortBy": "Total",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "none",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits received"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Bits received"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Bits sent"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Bits sent"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Outbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets with errors"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Inbound packets with errors"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Outbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Outbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [
+            {
+              "added": true,
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)/",
+                "Inbound packets discarded"
+              ],
+              "text": "replaceAlias(/(.*)/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Core Network - <LAN_SUBNET>"
+          },
+          "hide": false,
+          "host": {
+            "filter": "Switch Link Internet - IP"
+          },
+          "item": {
+            "filter": ": Inbound packets discarded"
+          },
+          "itemTag": {
+            "filter": "description: link-FO"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "ackEventColor": "rgb(56, 219, 156)",
+      "ackField": false,
+      "ageField": true,
+      "customLastChangeFormat": false,
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "zabbix-datasource"
+      },
+      "descriptionAtNewLine": false,
+      "descriptionField": true,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "highlightBackground": false,
+      "highlightNewEvents": true,
+      "highlightNewerThan": "1h",
+      "hostField": true,
+      "hostGroups": true,
+      "hostProxy": false,
+      "hostTechNameField": false,
+      "id": 8,
+      "interval": "3m",
+      "lastChangeFormat": "",
+      "layout": "table",
+      "markAckEvents": true,
+      "okEventColor": "rgb(56, 189, 113)",
+      "options": {
+        "ackEventColor": "rgb(56, 219, 156)",
+        "ackField": false,
+        "ageField": true,
+        "allowDangerousHTML": false,
+        "customLastChangeFormat": false,
+        "descriptionAtNewLine": false,
+        "descriptionField": true,
+        "fontSize": "100%",
+        "highlightBackground": false,
+        "highlightNewEvents": true,
+        "highlightNewerThan": "1h",
+        "hostField": true,
+        "hostGroups": false,
+        "hostProxy": false,
+        "hostTechNameField": false,
+        "lastChangeFormat": "",
+        "layout": "table",
+        "markAckEvents": true,
+        "okEventColor": "rgb(56, 189, 113)",
+        "opdataField": false,
+        "pageSize": 100,
+        "problemTimeline": true,
+        "resizedColumns": [
+          {
+            "id": "description",
+            "value": 353.513916015625
+          },
+          {
+            "id": "groups",
+            "value": 234.03125
+          },
+          {
+            "id": "age",
+            "value": 148
+          },
+          {
+            "id": "value",
+            "value": 133
+          },
+          {
+            "id": "lastchange",
+            "value": 220
+          },
+          {
+            "id": "host",
+            "value": 512
+          },
+          {
+            "id": "name",
+            "value": 620
+          }
+        ],
+        "severityField": false,
+        "showTags": false,
+        "sortProblems": "lastchange",
+        "statusField": true,
+        "statusIcon": false,
+        "triggerSeverity": [
+          {
+            "$$hashKey": "object:320",
+            "color": "rgb(108, 108, 108)",
+            "priority": 0,
+            "severity": "Not classified",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:321",
+            "color": "#5794F2",
+            "priority": 1,
+            "severity": "Informação ",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:322",
+            "color": "#E0B400",
+            "priority": 2,
+            "severity": "Alerta",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:323",
+            "color": "rgb(255, 137, 30)",
+            "priority": 3,
+            "severity": "Atenção ",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:324",
+            "color": "#C4162A",
+            "priority": 4,
+            "severity": "Importante",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:325",
+            "color": "rgb(215, 0, 0)",
+            "priority": 5,
+            "severity": "Indisponível",
+            "show": true
+          }
+        ]
+      },
+      "pageSize": 100,
+      "pluginVersion": "10.4.2",
+      "problemTimeline": true,
+      "resizedColumns": [
+        {
+          "id": "description",
+          "value": 353.513916015625
+        },
+        {
+          "id": "host",
+          "value": 267.0078125
+        },
+        {
+          "id": "groups",
+          "value": 234.03125
+        },
+        {
+          "id": "age",
+          "value": 148
+        }
+      ],
+      "schemaVersion": 8,
+      "severityField": true,
+      "showTags": false,
+      "sortProblems": "lastchange",
+      "statusField": true,
+      "statusIcon": true,
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "zabbix-datasource"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "Grupo_Core"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "acknowledged": 2,
+            "count": false,
+            "disableDataAlignment": false,
+            "hostProxy": false,
+            "hostsInMaintenance": true,
+            "limit": 1001,
+            "minSeverity": 0,
+            "severities": [
+              3,
+              4,
+              5
+            ],
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "sortProblems": "default",
+            "useTimeRange": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "5",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "showProblems": "problems",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "title": "Monitoramento de Ativos - Ambiente Exemplo",
+      "transparent": true,
+      "triggerSeverity": [
+        {
+          "$$hashKey": "object:320",
+          "color": "rgb(108, 108, 108)",
+          "priority": 0,
+          "severity": "Not classified",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:321",
+          "color": "rgb(120, 158, 183)",
+          "priority": 1,
+          "severity": "Informação ",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:322",
+          "color": "rgb(175, 180, 36)",
+          "priority": 2,
+          "severity": "Warning",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:323",
+          "color": "rgb(255, 137, 30)",
+          "priority": 3,
+          "severity": "Atenção ",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:324",
+          "color": "#C4162A",
+          "priority": 4,
+          "severity": "Indisponível",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:325",
+          "color": "rgb(215, 0, 0)",
+          "priority": 5,
+          "severity": "Disaster",
+          "show": true
+        }
+      ],
+      "type": "alexanderzobnin-zabbix-triggers-panel"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": [
+    "oi",
+    "icmp",
+    "fortigate",
+    "wan",
+    "redes"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Monitoramento de Ativos - Ambiente Exemplo",
+  "version": 346,
+  "weekStart": ""
+}
