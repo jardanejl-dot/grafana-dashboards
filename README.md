@@ -106,7 +106,7 @@ These dashboards focus on:
 ### 3️⃣ & 4️⃣ FortiGate Monitoring Dashboard
 
 📁 File: `03-monitoramento-fortigate-IPS.json` 
-       `04-monitoramento-fortigate-ha1-ha2..json`
+       `04-monitoramento-fortigate-ha1-ha2.json`
 
 ### 🔎 Features
 
