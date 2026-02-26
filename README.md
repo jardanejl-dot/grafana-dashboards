@@ -84,7 +84,7 @@ These dashboards focus on:
 
 ### 2️⃣ Latency Monitoring Dashboard (NOC)
 
-📁 File: `02-monitoramento-latencia-NOC.json` 📁 File: [01-acesso-rapido.json](https://github.com/jardanejl-dot/grafana-dashboards/blob/main/dashboards/01-acesso-rapido.json)
+📁 File: `02-monitoramento-latencia-NOC.json` 📁 File: [01-acesso-rapido.json](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
 
 ### 🔎 Features
 
