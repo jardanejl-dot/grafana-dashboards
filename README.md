@@ -73,7 +73,7 @@ These dashboards focus on:
 
 ### 1️⃣ Dashboard de Acesso rápido 
  
-📁 File: ⬇ [Download JSON](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
+📁 File: ⬇ [Download JSON acesso-rapido](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
 
 - Facilita vizualização favoritos e acesso recentes.
 
@@ -84,7 +84,7 @@ These dashboards focus on:
 
 ### 2️⃣ Latency Monitoring Dashboard (NOC)
 
-📁 File: ⬇ [Download JSON](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/02-monitoramento-latencia-NOC.json)
+📁 File: ⬇ [Download JSON monitoramento-latencia-NOC](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/02-monitoramento-latencia-NOC.json)
 
 ### 🔎 Features
 
@@ -104,8 +104,8 @@ These dashboards focus on:
 
 ### 3️⃣ & 4️⃣ FortiGate Monitoring Dashboard
 
-📁 File: ⬇ [Download JSON](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/03-monitoramento-fortigate-IPS.json)
-         ⬇ [Download JSON](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/04-monitoramento-fortigate-ha1-ha2.json)
+📁 File: ⬇ [Download JSON fortigate](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/03-monitoramento-fortigate-IPS.json)
+         ⬇ [Download JSON fortigate ha1-ha2](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/04-monitoramento-fortigate-ha1-ha2.json)
          
 ### 🔎 Features
 
@@ -131,7 +131,7 @@ These dashboards focus on:
 
 ### 5️⃣ Dashboard Zimbra SSH Security Monitoring
 
-📁 File: ⬇ [Download JSON](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/05-monitoramento-zimbra-ssh.json)
+📁 File: ⬇ [Download JSON zimbra-ssh-monitoring](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/05-monitoramento-zimbra-ssh.json)
 
 ### 🔎 Features
 
