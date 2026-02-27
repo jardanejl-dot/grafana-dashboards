@@ -73,7 +73,7 @@ These dashboards focus on:
 ### 1️⃣ Dashboard de Acesso rápido 
  
 📁 File: ⬇️ [Download JSON acesso-rapido](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
-> **Para fazer download dos dashboards:** Clique no link abaixo e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
+> **Para fazer download dos dashboard:** Clique no link abaixo e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 
 ### 🖼 Preview
 
@@ -83,7 +83,7 @@ These dashboards focus on:
 ### 2️⃣ Latency Monitoring Dashboard (NOC)
 
 📁 File: ⬇️ [Download JSON monitoramento-latencia-NOC](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/02-monitoramento-latencia-NOC.json)
-> **Para fazer download dos dashboards:** Clique no link acima e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
+> **Para fazer download dos dashboard:** Clique no link acima e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 
 ### 🔎 Features
 
@@ -103,8 +103,9 @@ These dashboards focus on:
 
 ### 3️⃣ & 4️⃣ FortiGate Monitoring Dashboard
 
-📁 File: ⬇ [Download JSON fortigate](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/03-monitoramento-fortigate-IPS.json)
-         ⬇ [Download JSON fortigate ha1-ha2](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/04-monitoramento-fortigate-ha1-ha2.json)
+📁 File: ⬇️ [Download JSON fortigate](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/03-monitoramento-fortigate-IPS.json)
+          ⬇️ [Download JSON fortigate ha1-ha2](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/04-monitoramento-fortigate-ha1-ha2.json)
+> **Para fazer download dos dashboards:** Clique no link acima e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
          
 ### 🔎 Features
 
