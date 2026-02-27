@@ -147,6 +147,15 @@ These dashboards focus on:
   - Timestamp
   - User
 
+### 🛡️ Requisitos de Monitoramento (Zabbix)
+Para que este dashboard exiba os dados corretamente, é mandatório que o host do **Zimbra** no Zabbix possua os seguintes itens de monitoramento configurados para a leitura do log `/var/log/secure`:
+
+* **SSH - Falha de autenticação**: `logrt["/var/log/secure","Failed password.*from|authentication failure"]`
+* **SSH - Login com sucesso**: `logrt["/var/log/secure","Accepted (password|publickey) for .* from",,,skip]`
+* **SSH - Logout de usuário**: `logrt["/var/log/secure","session closed for user"]`
+
+> **Nota Técnica:** O dashboard utiliza essas chaves de log para filtrar os eventos de segurança diretamente no servidor de e-mail. Sem esses itens ativos no Zabbix, os painéis do Grafana não encontrarão métricas para exibição.
+> 
 ### 🖼 Preview
 
 ![Zimbra Dashboard](images/preview-zimbra-ssh-monitoring.png)
