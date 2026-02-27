@@ -131,8 +131,8 @@ These dashboards focus on:
 
 ### 5️⃣ Dashboard Zimbra SSH Security Monitoring
 
-📁 File: ⬇ [Download JSON zimbra-ssh-monitoring](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/05-monitoramento-zimbra-ssh.json)
-
+📁 File: ⬇️ [Download JSON zimbra-ssh-monitoring](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/05-monitoramento-zimbra-ssh.json)
+> **Para fazer download dos dashboard:** Clique no link acima e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 ### 🔎 Features
 
 - SSH Login Statistics (24h)
