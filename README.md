@@ -73,7 +73,7 @@ These dashboards focus on:
 
 ### 1️⃣ Dashboard de Acesso rápido 
  
-📁 File: [⬇️ Baixar JSON acesso-rapido](https://img.statically.io/dl/raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
+📁 File: [⬇️ Download JSON acesso-rapido](https://github.com/jardanejl-dot/grafana-dashboards/raw/main/dashboards/01-acesso-rapido.json)
 
 - Facilita vizualização favoritos e acesso recentes.
 
