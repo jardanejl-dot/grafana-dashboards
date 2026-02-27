@@ -26,6 +26,8 @@ Os dashboards foram projetados com foco em:
 - Visão operacional para NOC
 - Monitoramento em tempo real
 
+#### Foram testados na versão 7.0 (Zabbix) / Grafana 10.0.
+
 ---
 
 ## 🇺🇸 About the Project
@@ -243,6 +245,7 @@ All dashboards were exported using Grafana external export mode to ensure:
 
 ---
 
+ 
 # 📄 License
 
 MIT License
