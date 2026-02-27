@@ -68,14 +68,12 @@ These dashboards focus on:
 └── README.md
 ```
 
-
 # 📊 Dashboards Overview
 
 ### 1️⃣ Dashboard de Acesso rápido 
  
-📁 File: [⬇️ Download JSON acesso-rapido](https://github.com/jardanejl-dot/grafana-dashboards/raw/main/dashboards/01-acesso-rapido.json)
-
-- Facilita vizualização favoritos e acesso recentes.
+📁 File: ⬇️ [Download JSON acesso-rapido](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
+> **Para fazer download dos dashboards:** Clique no link abaixo e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 
 ### 🖼 Preview
 
@@ -84,7 +82,8 @@ These dashboards focus on:
 
 ### 2️⃣ Latency Monitoring Dashboard (NOC)
 
-📁 File: ⬇ [Download JSON monitoramento-latencia-NOC](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/02-monitoramento-latencia-NOC.json)
+📁 File: ⬇️ [Download JSON monitoramento-latencia-NOC](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/02-monitoramento-latencia-NOC.json)
+> **Para fazer download dos dashboards:** Clique no link acima e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 
 ### 🔎 Features
 
