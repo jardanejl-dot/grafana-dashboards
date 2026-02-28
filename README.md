@@ -26,7 +26,7 @@ Os dashboards foram projetados com foco em:
 - Visão operacional para NOC
 - Monitoramento em tempo real
 
-#### Foram testados na versão 7.0 (Zabbix) / Grafana 10.0.
+#### Foram testados na versão 6.0 (Zabbix) / Grafana 10.0.
 
 ---
 
