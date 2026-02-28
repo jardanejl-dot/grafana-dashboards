@@ -77,7 +77,7 @@ These dashboards focus on:
 📁 File: ⬇️ [Download JSON acesso-rapido](https://raw.githubusercontent.com/jardanejl-dot/grafana-dashboards/main/dashboards/01-acesso-rapido.json)
 > **Para fazer download dos dashboard:** Clique no link abaixo e, assim que o JSON for aberto no navegador, pressione **Ctrl + S** (Windows/Linux) ou **Cmd + S** (Mac) para salvar o arquivo em seu computador.
 
-### 🖼 Preview
+### 🖼 Preview - Dashboard com dados fictícios 
 
 ![Acesso Rápido](images/acesso-rapido-preview.png)
 
@@ -98,7 +98,7 @@ These dashboards focus on:
 - Internet Link Throughput
 - Network Asset Status Overview (Host, Status, Problem, Age, Time)
 
-### 🖼 Preview
+### 🖼 Preview - Dashboard com dados fictícios 
 
 ![Latency Dashboard](images/latencia-preview-monitoring-NOC.png)
 
@@ -125,7 +125,7 @@ These dashboards focus on:
 - FortiGate Uptime
 - IPS Information
 
-### 🖼 Preview
+### 🖼 Preview - Dashboards com dados fictícios 
 
 ![FortiGate Dashboard IPS](images/fortigate-preview.png)
 ![FortiGate Dashboard](images/fortigate-preview-ha1-ha2.png)
@@ -158,7 +158,7 @@ Para que este dashboard exiba os dados corretamente, é mandatório que o host d
 
 > **Nota Técnica:** O dashboard utiliza essas chaves de log para filtrar os eventos de segurança diretamente no servidor de e-mail. Sem esses itens ativos no Zabbix, os painéis do Grafana não encontrarão métricas para exibição.
 > 
-### 🖼 Preview
+### 🖼 Preview - Dashboard com dados fictícios 
 
 ![Zimbra Dashboard](images/preview-zimbra-ssh-monitoring.png)
 
