@@ -49,6 +49,9 @@ These dashboards focus on:
 - NOC visibility
 - Real-time analysis
 
+> **Privacy Note:** All data and metrics displayed in screenshots and JSON files in this repository are **strictly fictitious** and were generated solely for technical and structural demonstration purposes of the dashboards.
+> 
+> **Environment:** Tested on Zabbix 6.0 / Grafana 10.0.
 ---
 
 ## 📂 Repository Structure
