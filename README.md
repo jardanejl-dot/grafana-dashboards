@@ -27,8 +27,9 @@ Os dashboards foram projetados com foco em:
 - Monitoramento em tempo real
 
 > **Nota de Privacidade:** Todos os dados e métricas exibidos nas capturas de tela e nos arquivos JSON deste repositório são **estritamente fictícios** e foram gerados apenas para fins de demonstração técnica e estrutural dos dashboards.
+> > 
+> **Testes realizados na versão 6.0 (Zabbix) / Grafana 10.0.
 
-#### Testes realizados na versão 6.0 (Zabbix) / Grafana 10.0.
 
 ---
 
